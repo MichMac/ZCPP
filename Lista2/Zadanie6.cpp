@@ -10,10 +10,13 @@ template<int A, int N> struct hiperszescian {
 template<int A> struct hiperszescian <A, 0 > {
     enum { capacity = 1 };
 };
-
+template<> struct hiperszescian <-1, -1> {
+    enum { capacity = -1 };
+};
 
 int main()
 {
-    cout << "Objetosc hiperszescianu wynosi:" << hiperszescian<5,2>::capacity;
+    cout << "Objetosc hiperszescianu wynosi: " << hiperszescian<3,5>::capacity;
     cout << endl;
+    cout << hiperszescian<-1, -1>::capacity; 
 }
